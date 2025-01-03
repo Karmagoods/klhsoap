@@ -6,24 +6,24 @@
     <meta name="description" content="Discover the story behind La Duree, a family-run soap company crafting wellness and care for generations.">
     <title>About Us - La Duree</title>
     <!-- Link to the CSS file -->
-    <link rel="stylesheet" href="style.css"> <!-- Removed leading / -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <!-- Navigation Bar -->
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('products_page') }}">Products</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Banner Section -->
     <section id="about-banner">
-        <img src="images/banner1.jpg" alt="About La Duree"> <!-- Removed leading / -->
+        <img src="{{ url_for('static', filename='images/banner1.jpg') }}" alt="About La Duree">
         <div class="banner-text">
             <h1>About LA DUREE</h1>
         </div>
@@ -36,7 +36,7 @@
             <p>LA DUREE is more than a soap company—it's a legacy of care. Inspired by the idea of "duration," our products are crafted with joy and wellness in mind, offering lasting care for every generation of your family.</p>
         </div>
         <div class="image-content">
-            <img src="images/founder2.jpg" alt="Founders of La Duree"> <!-- Removed leading / -->
+            <img src="{{ url_for('static', filename='images/founder2.jpg') }}" alt="Founders of La Duree">
         </div>
     </section>
 
@@ -47,7 +47,7 @@
             <p>At LA DUREE, our mission is simple: to create high-quality, natural soaps that bring families closer, turning daily care routines into joyful rituals. Each soap is designed to nourish the skin and connect generations through shared moments of wellness.</p>
         </div>
         <div class="image-content">
-            <img src="images/soapmaking1.jpg" alt="Soap Making Process"> <!-- Removed leading / -->
+            <img src="{{ url_for('static', filename='images/soapmaking1.jpg') }}" alt="Soap Making Process">
         </div>
     </section>
 
@@ -63,18 +63,18 @@
             </ul>
         </div>
         <div class="image-content">
-            <img src="images/natural1.jpg" alt="Natural Ingredients"> <!-- Removed leading / -->
+            <img src="{{ url_for('static', filename='images/natural1.jpg') }}" alt="Natural Ingredients">
         </div>
     </section>
 
-    <script src="js/script.js"></script> <!-- Removed leading / -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 LA DUREE. All Rights Reserved.</p>
         <div class="social-media">
-            <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
-            <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
+            <a href="#"><img src="{{ url_for('static', filename='images/facebook.png') }}" alt="Facebook"></a>
+            <a href="#"><img src="{{ url_for('static', filename='images/instagram.png') }}" alt="Instagram"></a>
         </div>
     </footer>
 </body>

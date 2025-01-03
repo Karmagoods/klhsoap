@@ -7,12 +7,12 @@
     <meta name="keywords" content="La Duree, French soap, natural skincare, family wellness, handcrafted soaps, organic soap, signature French soap, lasting joy, generational care">
     <meta name="author" content="La Duree">
     <title>La Duree - Lasting Joy in Every Moment</title>
-    <!-- Add base tag to handle path resolution -->
-    <link rel="stylesheet" href="style.css"> <!-- Updated path without leading / -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <audio autoplay>
-        <source src="images/audio1.mp3" type="audio/mpeg"> <!-- Updated path without leading / -->
+    <!-- Background Audio with Controls -->
+    <audio controls autoplay>
+        <source src="{{ url_for('static', filename='/images/audio1.mp3') }}" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     
@@ -20,20 +20,20 @@
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Our Soaps</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('products_page') }}">Our Soaps</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
             </ul>
         </nav>
         <div class="logo">
-            <img src="images/logo2.jpg" alt="La Duree Logo"> <!-- Updated path without leading / -->
+            <img src="{{ url_for('static', filename='images/logo2.jpg') }}" alt="La Duree Logo">
         </div>
     </header>
 
     <!-- Main Banner -->
     <section id="main-banner">
-        <img src="images/family1.jpg" alt="Family Joy with La Duree Soaps"> <!-- Updated path without leading / -->
+        <img src="{{ url_for('static', filename='images/family1.jpg') }}" alt="Family Joy with La Duree Soaps">
         <div class="banner-text">
             <h1>LA DUREE – Creating Lasting Joy</h1>
             <p>Inspired by the timeless beauty of France and the joy of family care, our handcrafted soaps bring lasting wellness to every home.</p>
@@ -47,7 +47,7 @@
             <p>At LA DUREE, we believe in the power of shared moments, rituals, and the lasting connections they create. Our signature soaps are crafted with care, using natural ingredients that nurture your family’s skin and well-being, ensuring a legacy of joy.</p>
         </div>
         <div class="image-content">
-            <img src="images/landscape1.jpg" alt="Scenic French Countryside"> <!-- Updated path without leading / -->
+            <img src="{{ url_for('static', filename='images/landscape1.jpg') }}" alt="Scenic French Countryside">
         </div>
     </section>
 
@@ -55,17 +55,17 @@
     <section id="featured-products">
         <h2>Our Signature Soap Collections</h2>
         <div class="product">
-            <img src="images/olive1.jpg" alt="Olive Soap"> <!-- Updated path without leading / -->
+            <img src="{{ url_for('static', filename='images/olive.jpg') }}" alt="Olive Soap">
             <h3>Olive Soap</h3>
             <p>Nourishing olive oil for soft, healthy skin – a family favorite.</p>
         </div>
         <div class="product">
-            <img src="images/honey2.jpg" alt="Honey and Almond Soap"> <!-- Updated path without leading / -->
+            <img src="{{ url_for('static', filename='images/honey.jpg') }}" alt="Honey and Almond Soap">
             <h3>Honey & Almond Milk Soap</h3>
             <p>A sweet, gentle blend for delicate skin, perfect for little ones.</p>
         </div>
         <div class="product">
-            <img src="images/rose1.jpg" alt="Rose Soap"> <!-- Updated path without leading / -->
+            <img src="{{ url_for('static', filename='images/rose.jpg') }}" alt="Rose Soap">
             <h3>Rose Soap</h3>
             <p>The timeless elegance of rose, bringing beauty and joy to daily care.</p>
         </div>
@@ -74,7 +74,7 @@
     <!-- Family Wellness Section -->
     <section id="family-wellness">
         <div class="image-content">
-            <img src="images/motherchild1.jpg" alt="Mother and Child Using La Duree Soap"> <!-- Updated path without leading / -->
+            <img src="{{ url_for('static', filename='images/motherchild1.jpg') }}" alt="Mother and Child Using La Duree Soap">
         </div>
         <div class="text-content">
             <h2>Generational Care, Timeless Wellness</h2>
@@ -86,22 +86,21 @@
     <section id="call-to-action">
         <h2>Discover the Lasting Joy of La Duree</h2>
         <p>Bring home the essence of France and the joy of family care. Shop our signature soap collections today and experience wellness that lasts.</p>
-        <a href="products.html" class="btn">Explore Our Soaps</a>
+        <a href="{{ url_for('products_page') }}" class="btn">Explore Our Soaps</a>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="social-media">
-                <a href="#"><img src="images/facebook-icon.png" alt="Facebook"> <!-- Updated path without leading / --></a>
-                <a href="#"><img src="images/instagram-icon.png" alt="Instagram"> <!-- Updated path without leading / --></a>
-                <a href="#"><img src="images/twitter-icon.png" alt="Twitter"> <!-- Updated path without leading / --></a>
+                <a href="#"><img src="{{ url_for('static', filename='images/facebook.png') }}" alt="Facebook"></a>
+                <a href="#"><img src="{{ url_for('static', filename='images/instagram.png') }}" alt="Instagram"></a>
+                <a href="#"><img src="{{ url_for('static', filename='images/twitter.png') }}" alt="Twitter"></a>
             </div>
             <p>&copy; 2024 LA DUREE. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script> <!-- Updated path without leading / -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
-

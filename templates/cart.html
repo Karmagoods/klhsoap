@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/static/images/logo2.jpg" alt="Logo">
+        </div>
+    </header>
+    <div id="cart">
+        <h1>Your Cart</h1>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product_id, item in cart.items() %}
+                <tr>
+                    <td class="item-name">{{ item['name'] }}</td>
+                    <td>{{ item['price'] }}</td>
+                    <td>
+                        <!-- Buttons for increasing and decreasing quantity -->
+                        <form action="{{ url_for('update_quantity', product_id=product_id) }}" method="POST">
+                            <button type="submit" name="action" value="decrease">-</button>
+                            {{ item['quantity'] }}
+                            <button type="submit" name="action" value="increase">+</button>
+                        </form>
+                    </td>
+                    <td>{{ item['price'] * item['quantity'] }}</td>
+                    <td>
+                        <!-- Button to remove item -->
+                        <form action="{{ url_for('remove_item', product_id=product_id) }}" method="POST">
+                            <button type="submit">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="cart-total">
+            <p>Total: ${{ total }}</p>
+        </div>
+        <div class="cart-buttons">
+            <a href="{{ url_for('checkout') }}">Proceed to Checkout</a>
+            <a href="{{ url_for('index') }}">Continue Shopping</a>
+        </div>
+    </div>
+</body>
+</html>

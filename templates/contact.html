@@ -8,7 +8,7 @@
     <meta name="author" content="La Duree">
     <title>Contact La Duree - Share Your Experience</title>
     <!-- Add base tag for handling paths -->
-    <link rel="stylesheet" href="style.css"> <!-- Updated path without leading / -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
@@ -16,14 +16,14 @@
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Our Soaps</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('products_page') }}">Our Soaps</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
             </ul>
         </nav>
         <div class="logo">
-            <img src="images/logo2.jpg" alt="La Duree Logo" /> <!-- Updated path without leading / -->
+            <img src="{{ url_for('static', filename='images/logo2.jpg') }}" alt="La Duree Logo">
         </div>
     </header>
 
