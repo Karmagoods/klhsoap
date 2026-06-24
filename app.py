@@ -5,6 +5,8 @@ from flask import (
 import os
 
 app = Flask(__name__)
+from dotenv import load_dotenv
+load_dotenv()   # Load .env file if exists
 
 # ====================== CONFIG ======================
 app.secret_key = os.environ.get('SECRET_KEY', 'your_secure_random_secret_key')  # ← Change in production!
